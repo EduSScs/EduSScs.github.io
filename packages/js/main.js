@@ -34,7 +34,7 @@
   function toggleSkills() {
     let itemClass = this.parentNode.className;
 
-    for (i = 0; i < skillsContent.length; i++) {
+    for (let i = 0; i < skillsContent.length; i++) {
       skillsContent[i].className = "skills__content skills__close";
     }
     if (itemClass === "skills__content skills__close") {
@@ -100,15 +100,15 @@
     sections.forEach((current) => {
       const sectionHeight = current.offsetHeight;
       const sectionTop = current.offsetTop - 50;
-      sectionId = current.getAttribute("id");
+      const sectionId = current.getAttribute("id");
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
-          .querySelector(".nav__menu a[href*=" + sectionId + "]")
+          .querySelector(".nav__menu a[href*='" + sectionId + "']")
           .classList.add("active-link");
       } else {
         document
-          .querySelector(".nav__menu a[href*=" + sectionId + "]")
+          .querySelector(".nav__menu a[href*='" + sectionId + "']")
           .classList.remove("active-link");
       }
     });
